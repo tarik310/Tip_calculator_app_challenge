@@ -1,0 +1,223 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  font-family: "Space Mono", sans-serif;
+}
+:root {
+  --Strong-cyan: hsl(172, 67%, 45%);
+  --Ver-dark-cyan: hsl(183, 100%, 15%);
+  --Dark-grayish-cyan1: hsl(186, 14%, 43%);
+  --Dark-grayish-cyan2: hsl(184, 14%, 56%);
+  --Light-grayish-cyan1: hsl(185, 41%, 84%);
+  --Light-grayish-cyan2: hsl(189, 41%, 97%);
+  --White: hsl(0, 0%, 100%);
+}
+
+body {
+  background-color: var(--Light-grayish-cyan1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#logo {
+  margin: 0 auto 55px;
+  display: block;
+}
+
+.calc {
+  background-color: white;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  padding: 25px;
+  border-radius: 15px;
+}
+.inputs {
+  margin-right: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.inputs > div > label {
+  display: inline-block;
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.percent {
+  width: calc(100% - 20px); /* 20px = column gap size *(column numbers -1)*/
+  display: grid;
+  grid-template-columns: calc(100% / 3) calc(100% / 3) calc(100% / 3);
+  row-gap: 10px;
+  column-gap: 10px;
+}
+
+.percent input {
+  height: 50px;
+  outline: none;
+  border: none;
+  font-size: 21px;
+  text-align: center;
+  border-radius: 5px;
+  font-weight: 700;
+}
+.percent input {
+  color: var(--Ver-dark-cyan);
+  background-color: var(--Light-grayish-cyan2);
+}
+
+.percent input:hover {
+  cursor: pointer;
+}
+.percent input:focus {
+  border: 2px solid var(--Strong-cyan);
+  color: var(--Ver-dark-cyan);
+}
+
+.innum {
+  width: 100%;
+  font-size: 24px;
+  border: 2px solid transparent;
+  padding: 2px 15px;
+  background-image: url(images/icon-dollar.svg);
+  background-color: var(--Light-grayish-cyan2);
+
+  background-position-x: 6%;
+  background-position-y: 50%;
+  background-repeat: no-repeat;
+  font-weight: 700;
+  border-radius: 3px;
+  color: var(--Ver-dark-cyan);
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.innum:hover {
+  cursor: pointer;
+}
+.innum:focus {
+  border: 2px solid var(--Strong-cyan);
+  color: var(--Ver-dark-cyan);
+}
+#people {
+  background-image: url(images/icon-person.svg);
+}
+#pe {
+  position: relative;
+}
+
+#ch {
+  position: absolute;
+  width: 130px;
+  height: 20px;
+  color: red;
+  visibility: hidden;
+
+  top: 10%;
+  left: 65%;
+}
+.innum:focus {
+  outline: none;
+}
+
+.result {
+  background-color: var(--Ver-dark-cyan);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 360px;
+  border-radius: 10px;
+}
+
+.t {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  align-items: center;
+}
+h4 {
+  color: var(--White);
+}
+h4 span {
+  font-size: 11px;
+  color: var(--Dark-grayish-cyan2);
+}
+.t > span {
+  font-size: 38px;
+  font-weight: 700;
+  color: var(--Strong-cyan);
+}
+
+.result button {
+  width: 100%;
+  height: 40px;
+  outline: none;
+  border: none;
+  background-color: rgb(8, 102, 96);
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--Ver-dark-cyan);
+  border-radius: 5px;
+}
+
+.lbtn {
+  height: 50px;
+  font-size: 21px;
+  text-align: center;
+  border-radius: 5px;
+  font-weight: 700;
+  background-color: var(--Ver-dark-cyan);
+  color: var(--White);
+  padding-top: 8px;
+}
+.lbtn:hover {
+  background-color: hsl(172, 91%, 71%);
+  color: var(--Ver-dark-cyan);
+  cursor: pointer;
+}
+.percent input[type="radio"]:checked + .lbtn {
+  background-color: var(--Strong-cyan);
+  color: var(--Ver-dark-cyan);
+}
+.percent input[type="radio"] {
+  display: none;
+}
+
+@media only screen and (max-width: 860px) {
+  body {
+    height: calc(
+      100% + 120px
+    ); /*60px = the .container margin-top-bottom property value * 2 */
+
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .container {
+    margin: 60px 0; /* body height and must be change above */
+  }
+
+  .calc {
+    display: flex;
+    flex-direction: column;
+  }
+  .inputs {
+    margin: 0 0 25px 0;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .percent {
+    width: calc(100% - 10px); /* 10px = column gap size * (column numbers -1)*/
+    display: grid;
+    grid-template-columns: 50% 50%;
+    row-gap: 10px;
+    column-gap: 10px;
+  }
+}

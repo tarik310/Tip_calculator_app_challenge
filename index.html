@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <link rel="stylesheet" href="style.css">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  
+  <title>Frontend Mentor | Tip calculator app</title>
+</head>
+
+<body>
+  <div class="container">
+    
+    <img src="images/logo.svg" id="logo" alt="logo">
+    
+    <div class="calc">
+      
+      <div class="inputs">
+        <!-- bill input start -->
+        <div>
+          <label for="">Bill</label>
+          <input type="number" max="100" class= "innum" id= 'bill'  placeholder='0' dir='rtl'>
+        </div>
+        <!-- bill input end -->
+        
+        <!-- tip percent input start -->
+        <div>
+          <label for="">Select Tip %</label>
+          
+          <div class="percent">
+              <input type="radio" name="chh" id="5">
+              <label class="lbtn" for="5" class="btn">5%</label>
+              
+              <input type="radio" name="chh" id="10">
+              <label class="lbtn" for="10" class="btn">10%</label>
+
+              <input type="radio" name="chh" id="15">
+              <label class="lbtn" for="15" class="btn">15%</label>
+
+              <input type="radio" name="chh" id="25">
+              <label class="lbtn" for="25" class="btn">25%</label>
+
+              <input type="radio" name="chh" id="50">
+              <label class="lbtn" for="50" class="btn">50%</label>
+
+              <input type="number" id="cus" placeholder="Custom">
+          </div>
+        </div>
+        <!-- tip percent input end -->
+
+        <!-- number of people input start -->
+        <div id="pe">
+          <span id = "ch">Can't be zero</span>
+          <label for="">Number of People</label>
+          <input type="number" class="innum"  id="people"  placeholder="0" dir="rtl">
+        </div>
+        <!-- number of people input end -->
+      
+      </div>
+
+      <div class="result">
+        
+        <div>
+            
+            <div class="t">
+            
+              <h4>Tip Amount <br> <span>/ person</span></h4>
+               <span id="tipamount">$0.00</span>
+            </div>
+            
+            <div class="t">
+              <h4>Total <br> <span>/ person</span></h4>
+              <span id="total" >$0.00</span>
+            </div>
+
+        
+        </div>
+          
+        <button id="reset">RESET</button>
+
+      </div>
+    </div>
+  </div>
+  
+  <script src="newmain.js" ></script>
+
+</body>
+</html>
